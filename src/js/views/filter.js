@@ -13,4 +13,12 @@ const createFilterForm = () => {
   return container;
 };
 
-export default createFilterForm;
+const renderFilter = () => {
+  const main = document.querySelector(`.${CLASS_LIST.main}`);
+
+  const filter = createFilterForm();
+
+  main.append(filter);
+};
+
+export default renderFilter;

@@ -3,7 +3,7 @@
 // import { filterPersons } from './js/filter';
 import requestToApi from './model/network';
 import createTableData from './model/data';
-import createFilterForm from './views/filter';
+import renderFilter from './views/filter';
 import createTable from './views/table';
 import mouseOverThumbnailHandler from './controllers/table';
 import inputFilterHandler from './controllers/filter';
@@ -20,21 +20,27 @@ const init = async () => {
   return persons;
 };
 
-const render = (persons) => {
+const renderTable = (persons) => {
   const main = document.querySelector(`.${CLASS_LIST.main}`);
-  const filter = createFilterForm();
+
+  const oldTable = document.querySelector(`.${CLASS_LIST.table}`);
+
+  if (oldTable) {
+    oldTable.remove();
+  }
+
   const table = createTable(persons);
 
   mouseOverThumbnailHandler(table);
 
-  main.append(filter);
   main.append(table);
 };
 
 const app = async () => {
   const persons = await init();
   STATE.persons = persons;
-  render(persons);
+  renderFilter();
+  renderTable(persons);
   inputFilterHandler();
 };
 

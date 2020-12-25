@@ -30,7 +30,7 @@ const createPesronImage = (urls) => {
   const large = document.createElement('img');
 
   container.classList.add(CLASS_LIST.imageContainer);
-  thumbnail.classList.add(CLASS_LIST.personThumbnail);
+  thumbnail.classList.add(CLASS_LIST.personThumbnail, CLASS_LIST.hidden);
   large.classList.add(CLASS_LIST.personLarge, CLASS_LIST.hidden);
 
   thumbnail.setAttribute('src', urls.thumbnail);
@@ -39,7 +39,10 @@ const createPesronImage = (urls) => {
   large.setAttribute('alt', '');
 
   container.append(thumbnail);
-  thumbnail.onload = () => container.append(large);
+  thumbnail.onload = () => {
+    thumbnail.classList.remove(CLASS_LIST.hidden);
+    container.append(large);
+  };
 
   return container;
 };
