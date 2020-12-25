@@ -1,6 +1,6 @@
-import { API_URL } from './constants';
+import { API_URL } from '../common/constants';
 
-export const requestToApi = async () => {
+const requestToApi = async () => {
   try {
     const res = await fetch(API_URL);
     const data = (res.ok) ? await res.json() : 'connection error';
@@ -10,3 +10,5 @@ export const requestToApi = async () => {
     return 'connection error';
   }
 };
+
+export default requestToApi;

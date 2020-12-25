@@ -1,18 +1,38 @@
 .table {
-  width: 100%;
-  font-size: 2rem;
-  color: $steel;
-  @extend %font-jura;
+	width: 100%;
+	color: $steel;
+	font-size: 2rem;
 }
-
+.table__row {
+  height: 60px;
+}
 .table__head {
-  background-color: $thead-bg;
+	background-color: $thead-bg;
 }
-
 .table__head__cell {
-  border: 2px solid $steel;
+	border: 2px solid $steel;
 }
-
 .table__cell {
-  border: 2px solid $steel;
+	border: 2px solid $steel;
+	text-align: center;
+}
+.image-container {
+	position: relative;
+}
+.image-thumbnail {
+	display: block;
+	margin: auto;
+	width: 60px;
+	height: 60px;
+}
+.image-large {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	transform: translateY(-50%);
+	border-radius: 10px;
+}
+.hidden {
+	opacity: 0;
 }
