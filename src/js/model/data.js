@@ -6,7 +6,7 @@ const convertDate = (inputString) => {
   return outputDate;
 };
 
-const filterPersons = (pattern, persons) => {
+export const filterPersons = (pattern, persons) => {
   const trimmedPattern = pattern.trim().toLowerCase();
 
   const output = (trimmedPattern)
@@ -31,6 +31,5 @@ const convertToRowData = (item) => {
   return output;
 };
 
-const createTableData = (JSONRequest) => JSONRequest.results.map((item) => convertToRowData(item));
-
-export default createTableData;
+export const createTableData = (JSONRequest) => JSONRequest.results
+  .map((item) => convertToRowData(item));
