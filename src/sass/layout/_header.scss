@@ -1,0 +1,17 @@
+.header {
+  height: 80px;  
+}
+
+.header-wrapper {
+  background-color: $header-bg;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 3rem;
+  color: $title-color;
+  @extend %font-jura;
+}

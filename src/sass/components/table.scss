@@ -1,0 +1,18 @@
+.table {
+  width: 100%;
+  font-size: 2rem;
+  color: $steel;
+  @extend %font-jura;
+}
+
+.table__head {
+  background-color: $thead-bg;
+}
+
+.table__head__cell {
+  border: 2px solid $steel;
+}
+
+.table__cell {
+  border: 2px solid $steel;
+}

@@ -1,6 +1,8 @@
 import { requestToApi } from './js/network';
 import { createTableData } from './js/data';
+import renderTable from './js/table';
 
 window.onload = async () => {
-  console.log(createTableData(await requestToApi()));
+  const persons = createTableData(await requestToApi());
+  renderTable(persons);
 };

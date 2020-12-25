@@ -1,6 +1,8 @@
 @import "../../node_modules/normalize.scss/normalize";
 @import "abstract/constants";
+@import "abstract/placeholders";
 @import "components/loader";
+@import "components/table";
 @import "layout/wrapper";
 @import "layout/header";
 

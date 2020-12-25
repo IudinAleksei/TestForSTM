@@ -16,7 +16,7 @@ export const convertToRowData = (item) => {
     location: `${item.location.state} ${item.location.city}`,
     email: item.email,
     phone: item.phone,
-    registeredDate: convertDate(item.registered.date),
+    'registered date': convertDate(item.registered.date),
   };
 
   return output;
