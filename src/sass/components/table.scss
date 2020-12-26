@@ -1,7 +1,13 @@
+.table-container {
+  width: 100%;
+  height: calc(100vh - 200px);
+  overflow: auto;
+}
+
 .table {
-	width: 100%;
+  width: 100%;
 	color: $steel;
-	font-size: 2rem;
+  font-size: 2rem;
 }
 .table__row {
   height: 60px;
@@ -41,7 +47,4 @@
   transform: translateY(-50%);  
   border-radius: 10px;
   @extend %transition;
-}
-.hidden {
-	opacity: 0;
 }

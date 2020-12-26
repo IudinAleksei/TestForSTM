@@ -12,7 +12,7 @@ module.exports = {
     main: [
       '@babel/polyfill',
       './src/index.js',
-      './src/sass/main.scss',
+      './src/sass/index.scss',
     ],
   },
   output: {

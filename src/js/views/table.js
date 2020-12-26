@@ -69,9 +69,11 @@ const createTableRow = (person) => {
 };
 
 const createTable = (persons) => {
+  const container = document.createElement('div');
   const table = document.createElement('table');
   const thead = createTableHead();
 
+  container.classList.add(CLASS_LIST.tableContainer);
   table.classList.add(CLASS_LIST.table);
 
   table.append(thead);
@@ -80,7 +82,9 @@ const createTable = (persons) => {
     table.append(row);
   });
 
-  return table;
+  container.append(table);
+
+  return container;
 };
 
 export default createTable;
