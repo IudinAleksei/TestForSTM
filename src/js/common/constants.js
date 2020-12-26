@@ -4,6 +4,7 @@ export const CLASS_LIST = Object.freeze({
   loader: 'lds-ring',
   filterContainer: 'filter-container',
   filter: 'filter',
+  clearBtn: 'clear-button',
   tableContainer: 'table-container',
   table: 'table',
   tableRow: 'table__row',

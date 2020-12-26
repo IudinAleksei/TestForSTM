@@ -7,7 +7,7 @@ import renderFilter from './views/filter';
 import createTable from './views/table';
 import { hideLoader } from './views/loader';
 import mouseOverThumbnailHandler from './controllers/table';
-import inputFilterHandler from './controllers/filter';
+import { inputFilterHandler, clearButtonHandler } from './controllers/filter';
 import { CLASS_LIST } from './common/constants';
 
 const init = async () => {
@@ -39,6 +39,7 @@ const app = async () => {
   renderFilter();
   renderTable(persons);
   inputFilterHandler(renderTable, filterPersons, persons);
+  clearButtonHandler();
 };
 
 export default app;

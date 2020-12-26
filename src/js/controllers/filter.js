@@ -1,6 +1,17 @@
 import { CLASS_LIST } from '../common/constants';
 
-const inputFilterHandler = (renderTable, filterPersons, persons) => {
+export const clearButtonHandler = () => {
+  const button = document.querySelector(`.${CLASS_LIST.clearBtn}`);
+  button.addEventListener('click', () => {
+    const input = document.querySelector(`.${CLASS_LIST.filter}`);
+    const event = new InputEvent('input');
+    input.value = '';
+    input.dispatchEvent(event);
+  });
+};
+
+export const inputFilterHandler = (renderTable, filterPersons, persons) => {
+  clearButtonHandler();
   const input = document.querySelector(`.${CLASS_LIST.filter}`);
   let isRunnable = true;
   input.addEventListener('input', (event) => {
@@ -16,5 +27,3 @@ const inputFilterHandler = (renderTable, filterPersons, persons) => {
     }, 500);
   });
 };
-
-export default inputFilterHandler;
