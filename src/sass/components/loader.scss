@@ -18,7 +18,8 @@
 	border-color: $loader-color transparent transparent transparent;
 	width: 64px;
 	height: 64px;
-	animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  @extend %transition;
 }
 .lds-ring div:nth-child(1) {
 	animation-delay: -0.45s;
