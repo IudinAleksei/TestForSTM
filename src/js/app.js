@@ -1,6 +1,3 @@
-// import { requestToApi } from './js/network';
-// import { createTableData } from './js/data';
-// import { filterPersons } from './js/filter';
 import requestToApi from './model/network';
 import { createTableData, filterPersons } from './model/data';
 import renderFilter from './views/filter';
