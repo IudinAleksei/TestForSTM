@@ -1,4 +1,4 @@
-import { CLASS_LIST, TABLE_HEAD } from '../common/constants';
+import { CLASS_LIST, TABLE_HEAD, EMPTY_TABLE_MESSAGE } from '../common/constants';
 
 const createTableHeadCell = (title) => {
   const cell = document.createElement('th');
@@ -68,21 +68,35 @@ const createTableRow = (person) => {
   return row;
 };
 
+const createMessage = () => {
+  const message = document.createElement('p');
+  message.classList.add(CLASS_LIST.message);
+  message.innerText = EMPTY_TABLE_MESSAGE;
+
+  return message;
+};
+
 const createTable = (persons) => {
   const container = document.createElement('div');
-  const table = document.createElement('table');
-  const thead = createTableHead();
-
   container.classList.add(CLASS_LIST.tableContainer);
-  table.classList.add(CLASS_LIST.table);
 
-  table.append(thead);
-  persons.forEach((person) => {
-    const row = createTableRow(person);
-    table.append(row);
-  });
+  if (Array.isArray(persons) && persons.length > 0) {
+    const table = document.createElement('table');
+    const thead = createTableHead();
 
-  container.append(table);
+    table.classList.add(CLASS_LIST.table);
+
+    table.append(thead);
+    persons.forEach((person) => {
+      const row = createTableRow(person);
+      table.append(row);
+    });
+
+    container.append(table);
+  } else {
+    const message = createMessage();
+    container.append(message);
+  }
 
   return container;
 };

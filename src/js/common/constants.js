@@ -14,8 +14,11 @@ export const CLASS_LIST = Object.freeze({
   imageContainer: 'image-container',
   personThumbnail: 'image-thumbnail',
   personLarge: 'image-large',
+  message: 'empty-table-message',
   hidden: 'hidden',
 });
+
+export const EMPTY_TABLE_MESSAGE = 'No data';
 
 export const TABLE_HEAD = Object.freeze(['name', 'picture', 'location', 'email', 'phone', 'registered date']);
 

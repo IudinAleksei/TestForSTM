@@ -13,17 +13,14 @@ export const clearButtonHandler = () => {
 export const inputFilterHandler = (renderTable, filterPersons, persons) => {
   clearButtonHandler();
   const input = document.querySelector(`.${CLASS_LIST.filter}`);
-  let isRunnable = true;
+  let timerId = null;
   input.addEventListener('input', (event) => {
-    if (!isRunnable) {
-      return;
+    if (timerId) {
+      clearInterval(timerId);
     }
 
-    isRunnable = false;
-
-    setTimeout(() => {
-      isRunnable = true;
+    timerId = setTimeout(() => {
       renderTable(filterPersons(event.target.value, persons));
-    }, 500);
+    }, 300);
   });
 };

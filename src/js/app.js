@@ -9,7 +9,7 @@ import { CLASS_LIST } from './common/constants';
 
 const init = async () => {
   const JSONResponse = await requestToApi();
-  const persons = createTableData(JSONResponse);
+  const persons = (JSONResponse === 'connection error') ? null : createTableData(JSONResponse);
 
   return persons;
 };

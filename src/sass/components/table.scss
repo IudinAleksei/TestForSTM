@@ -46,3 +46,8 @@
   border-radius: 10px;
   @extend %transition;
 }
+.empty-table-message {
+  font-size: 3.6rem;
+  font-weight: 700;
+  text-align: center;
+}
